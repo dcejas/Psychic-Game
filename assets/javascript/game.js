@@ -18,17 +18,44 @@ document.onkeyup = function(event) {
             guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
             guessesSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show        
         }
+        else if (guessesLeft ===0){
+            losses++;
+            alert("You didn't guess the correct letter. You lost. Let's try again.");
+            guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
+            guessesSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show  
+        }
+
+        else if (userGuess !== computerGuess) {
+            guessesLeft--; //decrementing the guesses left
+        }
 
 
+        // Taking the tallies and displaying them in HTML    
+        var html = "<h1>The Psychic Game</h1>" + 
+        "<p>Guess what letter I'm thinking of!</p>" +
+        "<p>Total Wins: " + 
+        wins + 
+        "</p>" +
+        "<p>Total Losses: " + 
+        losses + 
+        "</p>" +
+        "<p>Guesses Left: " + 
+        guessesLeft + 
+        "</p>" +
+        "<p>Your Guesses so far: " +
+        guessesSoFar +
+        "</p>"
+        ;
 
-        alert("user guess: " + userGuess);
+        // Placing the html into the game ID
+        document.querySelector('#game').innerHTML = html;
 
-        alert("Computer guess: "+ computerGuess);
+        // alert("user guess: " + userGuess);
+        // alert("Computer guess: "+ computerGuess);
 
-
-        document.getElementById("wins").innerHTML="Wins:" + wins;
-        document.getElementById("losses").innerHTML="Losses:" + losses;
-        document.getElementById("guessesLeft").innerHTML="Guesses Left:" + guessesLeft;
-        document.getElementById("guessesSoFar").innerHTML="Your Guesses so Far:" + guessesSoFar;
+        // document.getElementById("wins").innerHTML="Wins:" + wins;
+        // document.getElementById("losses").innerHTML="Losses:" + losses;
+        // document.getElementById("guessesLeft").innerHTML="Guesses Left:" + guessesLeft;
+        // document.getElementById("guessesSoFar").innerHTML="Your Guesses so Far:" + guessesSoFar;
 
     };
