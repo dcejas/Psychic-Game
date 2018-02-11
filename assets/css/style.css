@@ -1,5 +1,9 @@
 /* CSS PROPERLY LINKED */
 body {
-    background: url("../images/astronomy1.jpg");
+    background: url("../images/nebula1.jpg");
     background-repeat: no-repeat;
+}
+
+.jumbotron {
+    margin-top: 100px;
 }
