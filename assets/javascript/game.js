@@ -32,19 +32,19 @@ document.onkeyup = function(event) {
 
         // Taking the tallies and displaying them in HTML    
         var html = "<h1>The Psychic Game</h1>" + 
-        "<h2>Guess what letter I'm thinking of!</h2>" +
-        "<p>Total Wins: " + 
-        wins + 
-        "</p>" +
-        "<p>Total Losses: " + 
-        losses + 
-        "</p>" +
-        "<p>Guesses Left: " + 
-        guessesLeft + 
-        "</p>" +
-        "<p>Your Guesses so far: " +
-        guessesSoFar +
-        "</p>"
+            "<h2>Guess what letter I'm thinking of!</h2>" +
+            "<p>Total Wins: " + 
+            wins + 
+            "</p>" +
+            "<p>Total Losses: " + 
+            losses + 
+            "</p>" +
+            "<p>Guesses Left: " + 
+            guessesLeft + 
+            "</p>" +
+            "<p>Your Guesses so far: " +
+            guessesSoFar +
+            "</p>"
         ;
 
         // Placing the html into the game ID
