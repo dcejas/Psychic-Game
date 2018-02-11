@@ -1,15 +1,26 @@
 /* JS PROPERLY LINKED */
-var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var wins = 0;
+var losses = 0;
+var guessesLeft = 9;
+var guessesSoFar = []; //array to push user choices to
+var computerChoices = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-document.onkeyup = function(event)
-    {
-        var userGuess = event.key;
+document.onkeyup = function(event) {
+        var userGuess = String.fromCharCode(event.keyCode).toLowerCase(); //taking in user guess
 
-        var computerGuess = alphabet[Math.floor(Math.random() *alphabet.length)];
+        var computerGuess = computerChoices[Math.floor(Math.random() *computerChoices.length)]; // computer selects random letter
 
-        if(userGuess === "a" && computerGuess === "p"){
-            loses++;
+        guessesSoFar.push(userGuess); //pushing user guess to guesses so far
+
+        if (userGuess === computerGuess) {
+            wins++;
+            alert("Way to go! You've guessed correctly. You Won!");
+            guessesLeft = 9; //reseting the guesses back to 9 so that the user can play again
+            guessesSoFar.length = 0; //this removes everything from the guesses so far array, so that the guesses from the previous round don't show        
         }
+
+
+
         alert("user guess: " + userGuess);
 
         alert("Computer guess: "+ computerGuess);
